@@ -109,13 +109,15 @@ const forgotPassword = {
       if (err) {
         res.json({
           text: "Error",
-          data: data
+          data: data,
+          status: 400
         });
       } else {
         res.json({
           status: true,
           text: "this is protected",
-          data: data
+          data: data,
+          status: 200
         });
       }
     });
