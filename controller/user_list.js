@@ -12,7 +12,7 @@ const User = {
     });
   },
   ss(req, res) {
-    // req.session.token = "XDBBBB";
+    req.session.token = "XDBBBB";
     // ssn = req.session;
     // ssn.mail = "mailGGGG";
     // res.json({
