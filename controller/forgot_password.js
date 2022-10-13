@@ -46,7 +46,7 @@ const forgotPassword = {
       const token = await jwt.sign({ user }, random);
       ssn.seltForgot = random;
       ssn.tokenForgot = token;
-      const url = `https://goveture-fe-test.vercel.app/reset_password?id=${id}&code=${token}`;
+      const url = `http://localhost:3000/reset_password?id=${id}&code=${token}`;
       console.log(url, "url");
 
       var mailOptions = {
