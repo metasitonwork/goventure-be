@@ -9,7 +9,7 @@ app.use(
     secret: "secret"
   })
 );
-var snn;
+var ssn;
 
 var cors = require("cors");
 const corsConfig = {
