@@ -46,7 +46,7 @@ const forgotPassword = {
       const token = await jwt.sign({ user }, random);
       ssn.seltForgot = random;
       ssn.tokenForgot = token;
-      const url = `https://goventure-be-test.vercel.app/reset_password?id=${id}&code=${token}`;
+      const url = `https://goveture-fe-test.vercel.app/reset_password?id=${id}&code=${token}`;
       console.log(url, "url");
 
       var mailOptions = {
@@ -54,7 +54,7 @@ const forgotPassword = {
         to: email,
         subject: "Sending Email using Node.js",
         html: `
-        <h2>กรุณาสร้างตั้งรหัสผ่านใหม่</h2>
+        <h2>กรุณาสร้างรหัสผ่านใหม่</h2>
         <div>
           <a href='${url}'>${url}</a> 
         </div>
