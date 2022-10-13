@@ -1,0 +1,6 @@
+หมายเหตุ 
+1.ให้สร้าง DB ชื่อ ว่า user แล้ว import file user.sql ลงไป
+2. examExtreamAPI,examextreamfront ให้ใช้ npm start  ในการ run Front UI และ API
+3.ในที่นี้ผม run ใน local ไม่ได้ run บน server  ใช้ตัวจำลอง server เป็น  xampp ถ้าใช้ตามนี้ จะ run program local ได้ตามปกติ
+
+4.โจทย์ข้อ2 ที่ ทำจะอยู่ ใน  ตัว API backend ชื่อว่า examTwo.html ให้ click run ได้ เลย
