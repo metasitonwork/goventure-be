@@ -104,7 +104,7 @@ const forgotPassword = {
 
   async protectedForgot(req, res) {
     const { token, id } = req.body;
-    res.end(ssn.toString());
+    res.end(JSON.stringify(ssn));
     // jwt.verify(token, ssn.selt, function(err, data) {
     //   if (err) {
     //     res.json({
