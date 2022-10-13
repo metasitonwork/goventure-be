@@ -14,11 +14,12 @@ const login = {
   async login(req, res) {
     console.log("login");
     let { username, password } = req.body;
-    req.session.token = "token";
-    req.session.selt = "selt";
+    snn = req.session;
+    ssn.token = "token";
+    ssn.selt = "selt";
     res.json({
       test: "test",
-      session: req.session
+      session: ssn
     });
 
     return;
