@@ -9,7 +9,7 @@ const User = {
     ssn = req.session;
     res.json({
       start: "start",
-      session: ssn
+      session: req.session
     });
   },
   test(req, res) {
