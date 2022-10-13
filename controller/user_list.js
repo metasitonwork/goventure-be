@@ -13,13 +13,13 @@ const User = {
     });
   },
   ss(req, res) {
-    req.session.mail = "XD";
+    // req.session.mail = "XD";
     // ssn = req.session;
     // ssn.mail = "mailGGGG";
     // res.json({
     //   a: "test"
     // });
-    res.end("xd");
+    res.end("xdAAAA");
   },
   test(req, res) {
     res.json({ status: "success" });
