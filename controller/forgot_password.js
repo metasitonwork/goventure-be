@@ -104,21 +104,21 @@ const forgotPassword = {
 
   async protectedForgot(req, res) {
     const { token, id } = req.body;
-    res.end(JSON.stringify(ssn).toString());
-    // jwt.verify(token, ssn.selt, function(err, data) {
-    //   if (err) {
-    //     res.json({
-    //       text: "Error",
-    //       data: data
-    //     });
-    //   } else {
-    //     res.json({
-    //       status: true,
-    //       text: "this is protected",
-    //       data: data
-    //     });
-    //   }
-    // });
+    // res.end(JSON.stringify(ssn).toString());
+    jwt.verify(token, ssn.seltForgot, function(err, data) {
+      if (err) {
+        res.json({
+          text: "Error",
+          data: data
+        });
+      } else {
+        res.json({
+          status: true,
+          text: "this is protected",
+          data: data
+        });
+      }
+    });
   },
 
   exit(req, res) {
