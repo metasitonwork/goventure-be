@@ -14,16 +14,16 @@ const login = {
     // console.log("login");
     // let { username, password } = req.body;
     ssn = req.session;
-    ssn.token = "444";
-    ssn.selt = "111";
-    res.end("END" + req.session.token);
+    // ssn.token = "444";
+    // ssn.selt = "111";
+    // res.end("END" + req.session.token);
     // res.json({
     //   test: "test",
     //   session: req.session
     // });
 
-    return;
-    console.log(username, password);
+    // return;
+    // console.log(username, password);
     let data = await db.con_db(`SELECT * FROM user WHERE username = '${username}' AND  password =   '${password}'  `);
     if (data == false) {
       res.status(400).json({
@@ -53,8 +53,10 @@ const login = {
     } catch (e) {}
     const user = { id: id };
     const token = await jwt.sign({ user }, random);
-    res.cookie("token", token);
-    res.cookie("selt", random);
+    ssn.token = token;
+    ssn.selt = selt;
+    // res.cookie("token", token);
+    // res.cookie("selt", random);
     console.log(req.cookies.selt, "selt");
     res.json({
       data: data,
