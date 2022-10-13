@@ -15,10 +15,8 @@ const login = {
     // console.log("login");
     // let { username, password } = req.body;
     // ssn = req.session;
-    // req.session.token = "AAA";
-    // req.session.selt = "BBB";
-    res.cookie("token", "456");
-    console.log();
+    req.session.token = "AAA";
+    req.session.selt = "BBB";
     res.end("END");
     // res.json({
     //   test: "test",

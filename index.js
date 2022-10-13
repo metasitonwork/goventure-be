@@ -2,26 +2,14 @@ var express = require("express");
 var app = express();
 var fs = require("fs");
 const session = require("express-session");
-passport = require("passport");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
-    resave: false,
-    saveUninitialized: false,
-    secret: "supersecret",
-    cookie: {
-      httpOnly: true,
-      secure: true,
-      maxAge: 3600000
-    }
+    secret: "secret"
   })
 );
-app.set("trust proxy", 1);
-app.use(passport.initialize());
-app.use(passport.session());
-
-var ssn = null;
+var ssn;
 
 var cors = require("cors");
 const corsConfig = {
