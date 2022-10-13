@@ -15,7 +15,7 @@ const User = {
   },
   ss(req, res) {
     ssn = req.session;
-    ssn.mail = "mailXD";
+    ssn.mail = "mailGGGG";
     res.json({
       a: "test"
     });
