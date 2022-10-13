@@ -17,7 +17,7 @@ const User = {
     ssn = req.session;
     ssn.token = "token";
     ssn.selt = "selt";
-    res.end("sss");
+    res.send("sss");
   },
   test(req, res) {
     res.json({ status: "success" });
