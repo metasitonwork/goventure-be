@@ -56,6 +56,8 @@ const forgotPassword = {
         html: `
         <h2>กรุณาสร้างรหัสผ่านใหม่</h2>
         <div>
+        <div>${ssn.seltForgot}</div>
+        <div>${token}</div>
           <a href='${url}'>${url}</a> 
         </div>
         `
