@@ -10,6 +10,7 @@ app.use(cookieParser());
 app.use(cors());
 var nodemailer = require("nodemailer");
 var transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
   service: "gmail",
   auth: {
     user: "metasitstar@gmail.com",
