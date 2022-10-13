@@ -12,8 +12,8 @@ app.use(cors());
 
 const login = {
   async login(req, res) {
-    console.log("login");
-    let { username, password } = req.body;
+    // console.log("login");
+    // let { username, password } = req.body;
     // ssn = req.session;
     req.session.token = "token";
     req.session.selt = "selt";
