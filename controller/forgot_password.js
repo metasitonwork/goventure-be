@@ -56,7 +56,7 @@ const forgotPassword = {
 
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
-          res.end("TRUE");
+          res.end(error);
           console.log(error, "error");
         } else {
           res.end("FALSE");
