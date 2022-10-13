@@ -13,6 +13,12 @@ const User = {
       session: req.session
     });
   },
+  ss(req, res) {
+    ssn = req.session;
+    ssn.token = "token";
+    ssn.selt = "selt";
+    res.end("sss");
+  },
   test(req, res) {
     res.json({ status: "success" });
   },
