@@ -46,7 +46,7 @@ const forgotPassword = {
       const token = await jwt.sign({ user }, random);
       ssn.seltForgot = random;
       ssn.tokenForgot = token;
-      const url = `https://goventure-be-test.vercel.app//forgot?id=${id}&code=${token}`;
+      const url = `https://goventure-be-test.vercel.app/reset_password?id=${id}&code=${token}`;
       console.log(url, "url");
 
       var mailOptions = {
