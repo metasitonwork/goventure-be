@@ -5,6 +5,12 @@ var db = require("../connect_db");
 var md5 = require("md5");
 app.use(cors());
 const User = {
+  empty(req, res) {
+    res.json({
+      start: "start",
+      session: req.session
+    });
+  },
   test(req, res) {
     res.json({ status: "success" });
   },

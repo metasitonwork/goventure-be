@@ -5,6 +5,7 @@ var jwt = require("jsonwebtoken");
 var db = require("../connect_db");
 const cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
+const { json } = require("express");
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
@@ -12,6 +13,13 @@ app.use(cors());
 const login = {
   async login(req, res) {
     let { username, password } = req.body;
+    req.session.token = "token";
+    req.session.selt = "selt";
+    json({
+      session: req.session
+    });
+
+    return;
     console.log(username, password);
     let data = await db.con_db(`SELECT * FROM user WHERE username = '${username}' AND  password =   '${password}'  `);
     if (data == false) {
