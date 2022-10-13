@@ -7,7 +7,7 @@ app.use(cors());
 const User = {
   empty(req, res) {
     console.log(req.session, "req.session");
-    res.end(req.session.token);
+    res.end("ADDDD" + req.session.token);
     // res.json({
     //   session: req.session.token
     // });
