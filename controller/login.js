@@ -14,7 +14,7 @@ const login = {
     // console.log("login");
     // let { username, password } = req.body;
     // ssn = req.session;
-    req.session.token = "333";
+    req.session.token = "444";
     req.session.selt = "111";
     res.end("END" + req.session.token);
     // res.json({
