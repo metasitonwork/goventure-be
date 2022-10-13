@@ -37,7 +37,7 @@ const forgotPassword = {
       }
     });
 
-    res.end("TEST");
+    // res.end("TEST");
 
     return;
     ssn = req.session;
