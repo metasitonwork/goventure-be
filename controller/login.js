@@ -12,10 +12,11 @@ app.use(cors());
 
 const login = {
   async login(req, res) {
+    console.log("login");
     let { username, password } = req.body;
     req.session.token = "token";
     req.session.selt = "selt";
-    json({
+    res.json({
       test: "test"
     });
 
