@@ -12,7 +12,7 @@ const Module = {
       const bearer = bearerHeader.split(" ");
       const bearerToken = bearer[1];
       req.token = bearerToken;
-      jwt.verify(req.token, req.cookies.selt, function(err, data) {
+      jwt.verify(ssn.token, ssn.selt, function(err, data) {
         if (err) {
           console.log("FALSE");
           res.json({
