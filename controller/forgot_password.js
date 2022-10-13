@@ -40,7 +40,7 @@ const forgotPassword = {
       const user = { id: id };
       let random = makeid(5);
       const token = await jwt.sign({ user }, random);
-      const url = `http://localhost:3000/forgot?id=${id}&code=${token}`;
+      const url = `https://goventure-be-test.vercel.app//forgot?id=${id}&code=${token}`;
       console.log(url, "url");
 
       var mailOptions = {
@@ -53,8 +53,10 @@ const forgotPassword = {
 
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
+          res.end("TRUE");
           console.log(error, "error");
         } else {
+          res.end("FALSE");
           console.log("Email sent: " + info.response);
         }
       });
