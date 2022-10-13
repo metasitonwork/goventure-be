@@ -18,7 +18,7 @@ function getRouter(app) {
   app.post("/exit", Module.ensureToken, controllerLogin.exit);
   app.post("/protected", controllerLogin.protected);
 
-  app.get("/forgot", controllerForgot.forgot);
+  app.post("/forgot", controllerForgot.forgot);
   app.post("/reset_password", controllerForgot.reset_password);
 }
 
