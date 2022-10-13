@@ -6,7 +6,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
-    secret: "secret"
+    resave: false,
+    saveUninitialized: false,
+    secret: "supersecret",
+    cookie: {
+      httpOnly: false,
+      secure: false
+    }
   })
 );
 var ssn;
