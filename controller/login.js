@@ -17,10 +17,11 @@ const login = {
     // ssn = req.session;
     req.session.token = "token";
     req.session.selt = "selt";
-    res.json({
-      test: "test",
-      session: req.session
-    });
+    res.end("END");
+    // res.json({
+    //   test: "test",
+    //   session: req.session
+    // });
 
     return;
     console.log(username, password);
