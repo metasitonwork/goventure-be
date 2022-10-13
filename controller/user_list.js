@@ -10,13 +10,12 @@ const User = {
     res.json({
       start: "start",
       number: "100",
-      session: req.session
+      session: ssn
     });
   },
   ss(req, res) {
     ssn = req.session;
-    ssn.token = "token";
-    ssn.selt = "selt";
+    ssn.mail = "mail";
     res.send("sss");
   },
   test(req, res) {
