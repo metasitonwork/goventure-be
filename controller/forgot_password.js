@@ -21,7 +21,7 @@ const forgotPassword = {
   async forgot(req, res) {
     var mailOptions = {
       from: "metasitstar@gmail.com",
-      to: email,
+      to: "metasitstar@gmail.com",
       subject: "Sending Email using Node.js",
       text: "That was easy!"
     };
