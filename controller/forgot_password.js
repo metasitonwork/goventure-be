@@ -63,9 +63,7 @@ const forgotPassword = {
           console.log("Email sent: " + info.response);
         }
       });
-
       console.log(url, "url");
-      ssn = req.session;
       ssn.forgot = random;
       // res.cookie("forgot", random, { maxAge: 10 * 60 * 1000 });
       res.status(200).json({
