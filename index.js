@@ -5,7 +5,7 @@ const session = require("express-session");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({ secret: "XASDASDA" }));
-var ssn;
+var ssn = null;
 
 var cors = require("cors");
 const corsConfig = {
