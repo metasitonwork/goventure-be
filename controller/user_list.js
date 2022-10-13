@@ -6,6 +6,7 @@ var md5 = require("md5");
 app.use(cors());
 const User = {
   empty(req, res) {
+    ssn = req.session;
     res.json({
       start: "start",
       session: ssn
