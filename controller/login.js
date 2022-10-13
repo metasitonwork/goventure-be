@@ -69,6 +69,7 @@ const login = {
     // res.clearCookie("selt");
     res.end("");
   },
+
   async protected(req, res) {
     const { token } = req.body;
     console.log(ssn.selt, "SELT");
