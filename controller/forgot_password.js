@@ -19,6 +19,27 @@ var transporter = nodemailer.createTransport({
 });
 const forgotPassword = {
   async forgot(req, res) {
+    var mailOptions = {
+      from: "metasitstar@gmail.com",
+      to: email,
+      subject: "Sending Email using Node.js",
+      text: "That was easy!"
+    };
+    console.log(mailOptions, "mailOptions");
+
+    transporter.sendMail(mailOptions, function(error, info) {
+      if (error) {
+        res.end(error.toString());
+        console.log(error, "error");
+      } else {
+        res.end("FALSE");
+        console.log("Email sent: " + info.response);
+      }
+    });
+
+    res.end("TEST");
+
+    return;
     ssn = req.session;
     let { email } = req.body;
     let data = await db.con_db(`SELECT * FROM user WHERE email = '${email}'  `);
