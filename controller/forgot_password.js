@@ -53,9 +53,15 @@ const forgotPassword = {
         from: "metasitstar@gmail.com",
         to: email,
         subject: "Sending Email using Node.js",
-        text: "That was easy!"
+        html: `
+        <h2>กรุณาสร้างตั้งรหัสผ่านใหม่</h2>
+        <div>
+          <a href='${url}'>${url}</a> 
+        </div>
+        `
       };
       console.log(mailOptions, "mailOptions");
+      console.log(url, "url");
 
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
@@ -66,8 +72,7 @@ const forgotPassword = {
           console.log("Email sent: " + info.response);
         }
       });
-      console.log(url, "url");
-      ssn.forgot = random;
+
       // res.cookie("forgot", random, { maxAge: 10 * 60 * 1000 });
       // res.status(200).json({
       //   status: 200,
