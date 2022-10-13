@@ -20,6 +20,7 @@ function getRouter(app) {
 
   app.post("/forgot", controllerForgot.forgot);
   app.post("/reset_password", controllerForgot.reset_password);
+  app.post("/protectForgot", controllerForgot.protectedForgot);
 }
 
 module.exports = {

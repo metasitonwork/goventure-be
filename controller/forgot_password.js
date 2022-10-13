@@ -56,8 +56,6 @@ const forgotPassword = {
         html: `
         <h2>กรุณาสร้างรหัสผ่านใหม่</h2>
         <div>
-        <div>${ssn.seltForgot}</div>
-        <div>${token}</div>
           <a href='${url}'>${url}</a> 
         </div>
         `
@@ -84,28 +82,6 @@ const forgotPassword = {
       return;
     }
     console.log(data.length, "data.length");
-    // function makeid(length) {
-    //   var result = [];
-    //   var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    //   var charactersLength = characters.length;
-    //   for (var i = 0; i < length; i++) {
-    //     result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
-    //   }
-    //   return result.join("");
-    // }
-    // let id = data[0]["id_user"];
-    // let random = makeid(5);
-    // try {
-    // } catch (e) {}
-    // const user = { id: id };
-    // const token = await jwt.sign({ user }, random);
-    // res.cookie("token", token);
-    // res.cookie("selt", random);
-    // console.log(req.cookies.selt, "selt");
-    // res.json({
-    //   data: data,
-    //   token: token
-    // });
   },
   async reset_password(req, res) {
     let { id, password } = req.body;
@@ -125,6 +101,26 @@ const forgotPassword = {
       });
     }
   },
+
+  async protectedForgot(req, res) {
+    const { token, id } = req.body;
+    res.end(ssn.toString());
+    // jwt.verify(token, ssn.selt, function(err, data) {
+    //   if (err) {
+    //     res.json({
+    //       text: "Error",
+    //       data: data
+    //     });
+    //   } else {
+    //     res.json({
+    //       status: true,
+    //       text: "this is protected",
+    //       data: data
+    //     });
+    //   }
+    // });
+  },
+
   exit(req, res) {
     console.log("exit");
     console.log(req.cookies, "before");
