@@ -6,20 +6,20 @@ var md5 = require("md5");
 app.use(cors());
 const User = {
   empty(req, res) {
-    ssn = req.session;
     res.json({
       start: "start",
       number: "100",
-      session: ssn
+      session: req.session
     });
   },
   ss(req, res) {
-    ssn = req.session;
-    ssn.mail = "mailGGGG";
-    res.json({
-      a: "test"
-    });
-    // res.end("END");
+    req.session.mail = "ADDDD";
+    // ssn = req.session;
+    // ssn.mail = "mailGGGG";
+    // res.json({
+    //   a: "test"
+    // });
+    res.end("END");
   },
   test(req, res) {
     res.json({ status: "success" });
