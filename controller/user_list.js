@@ -9,6 +9,7 @@ const User = {
     ssn = req.session;
     res.json({
       start: "start",
+      number: "100",
       session: req.session
     });
   },
