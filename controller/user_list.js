@@ -13,7 +13,7 @@ const User = {
     });
   },
   ss(req, res) {
-    req.session.mail = "ADDDD";
+    req.session.mail = "AG";
     // ssn = req.session;
     // ssn.mail = "mailGGGG";
     // res.json({
