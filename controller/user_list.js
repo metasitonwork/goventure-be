@@ -16,7 +16,8 @@ const User = {
   ss(req, res) {
     ssn = req.session;
     ssn.mail = "mail";
-    res.end("sss1");
+    res.send("send");
+    res.end();
   },
   test(req, res) {
     res.json({ status: "success" });
