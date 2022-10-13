@@ -65,15 +65,14 @@ const login = {
   },
   exit(req, res) {
     console.log("exit");
-    console.log(req.cookies, "before");
-    res.clearCookie("selt");
-    console.log(req.cookies, "after");
+    delete ssn.selt;
+    // res.clearCookie("selt");
     res.end("");
   },
   async protected(req, res) {
     const { token } = req.body;
-    console.log(req.cookies.selt, "SELT");
-    jwt.verify(token, req.cookies.selt, function(err, data) {
+    console.log(ssn.selt, "SELT");
+    jwt.verify(token, ssn.selt, function(err, data) {
       if (err) {
         res.json({
           text: "Error",

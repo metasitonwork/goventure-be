@@ -60,7 +60,9 @@ const forgotPassword = {
       });
 
       console.log(url, "url");
-      res.cookie("forgot", random, { maxAge: 10 * 60 * 1000 });
+      ssn = req.session;
+      ssn.forgot = random;
+      // res.cookie("forgot", random, { maxAge: 10 * 60 * 1000 });
       res.status(200).json({
         status: 200,
         message: "กรุณาตรวจสอบ Email"
