@@ -16,7 +16,7 @@ const login = {
     req.session.token = "token";
     req.session.selt = "selt";
     json({
-      session: req.session
+      test: "test"
     });
 
     return;
