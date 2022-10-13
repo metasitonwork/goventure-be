@@ -18,6 +18,7 @@ var transporter = nodemailer.createTransport({
 });
 const forgotPassword = {
   async forgot(req, res) {
+    ssn = req.session;
     let { email } = req.body;
     let data = await db.con_db(`SELECT * FROM user WHERE email = '${email}'  `);
     if (data.length === 0) {
