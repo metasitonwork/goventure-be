@@ -2,6 +2,7 @@ const controllerUser = require("./controller/user_list");
 const controllerLogin = require("./controller/login");
 const controllerForgot = require("./controller/forgot_password");
 const Module = require("./function_global");
+
 function getRouter(app) {
   app.get("/", controllerUser.empty);
   app.get("/test", controllerUser.test);

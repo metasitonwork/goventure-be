@@ -14,7 +14,7 @@ const login = {
   async login(req, res) {
     console.log("login");
     let { username, password } = req.body;
-    snn = req.session;
+    ssn = req.session;
     ssn.token = "token";
     ssn.selt = "selt";
     res.json({
