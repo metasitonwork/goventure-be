@@ -16,10 +16,10 @@ const User = {
   ss(req, res) {
     ssn = req.session;
     ssn.mail = "mailXD";
-    // res.json({
-    //   a: "test"
-    // });
-    res.end("END");
+    res.json({
+      a: "test"
+    });
+    // res.end("END");
   },
   test(req, res) {
     res.json({ status: "success" });
