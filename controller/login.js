@@ -5,7 +5,6 @@ var jwt = require("jsonwebtoken");
 var db = require("../connect_db");
 const cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
-const { json } = require("express");
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
@@ -17,7 +16,7 @@ const login = {
     // ssn = req.session;
     req.session.token = "AAA";
     req.session.selt = "BBB";
-    res.end("END");
+    res.end("END"  req.session.token);
     // res.json({
     //   test: "test",
     //   session: req.session
