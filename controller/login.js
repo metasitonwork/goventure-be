@@ -16,7 +16,7 @@ const login = {
     // ssn = req.session;
     req.session.token = "AAA";
     req.session.selt = "BBB";
-    res.end("END"  req.session.token);
+    res.end("END" + req.session.token);
     // res.json({
     //   test: "test",
     //   session: req.session
