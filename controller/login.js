@@ -12,7 +12,7 @@ app.use(cors());
 const login = {
   async login(req, res) {
     // console.log("login");
-    // let { username, password } = req.body;
+    let { username, password } = req.body;
     ssn = req.session;
     // ssn.token = "444";
     // ssn.selt = "111";
@@ -54,10 +54,10 @@ const login = {
     const user = { id: id };
     const token = await jwt.sign({ user }, random);
     ssn.token = token;
-    ssn.selt = selt;
+    ssn.selt = random;
     // res.cookie("token", token);
     // res.cookie("selt", random);
-    console.log(req.cookies.selt, "selt");
+    // console.log(req.cookies.selt, "selt");
     res.json({
       data: data,
       token: token
