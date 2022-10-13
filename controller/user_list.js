@@ -19,10 +19,7 @@ const User = {
     // res.json({
     //   a: "test"
     // });
-    res.end({
-      a: 100,
-      b: "200"
-    });
+    res.end("END");
   },
   test(req, res) {
     res.json({ status: "success" });
