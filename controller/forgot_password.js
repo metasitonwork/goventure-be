@@ -68,16 +68,17 @@ const forgotPassword = {
           res.end(error.toString());
           console.log(error, "error");
         } else {
-          res.end("FALSE");
-          console.log("Email sent: " + info.response);
+          res.status(200).json({
+            status: 200,
+            message: "กรุณาตรวจสอบ Email"
+          });
+          // res.end("FALSE");
+          // console.log("Email sent: " + info.response);
         }
       });
 
       // res.cookie("forgot", random, { maxAge: 10 * 60 * 1000 });
-      // res.status(200).json({
-      //   status: 200,
-      //   message: "กรุณาตรวจสอบ Email"
-      // });
+
       return;
     }
     console.log(data.length, "data.length");
