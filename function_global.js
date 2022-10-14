@@ -18,16 +18,16 @@ const Module = {
     //   return;
     //   }
     // }
-    res.end("AAAA" + req.session.token);
+    res.end("AAAA" + JSON.stringify(ssn));
 
-    ssn = req.session;
-    if (!ssn.token) {
-      res.json({
-        status: 400,
-        message: "No Page"
-      });
-      return;
-    }
+    // ssn = req.session;
+    // if (!ssn.token) {
+    //   res.json({
+    //     status: 400,
+    //     message: "No Page"
+    //   });
+    //   return;
+    // }
 
     const bearerHeader = req.headers["authorization"];
     if (typeof bearerHeader !== "undefined") {
