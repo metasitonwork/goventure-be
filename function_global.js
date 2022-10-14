@@ -6,29 +6,15 @@ app.use(cors());
 
 const Module = {
   ensureToken(req, res, next) {
-    // try {
-    //   console.log(ssn);
-    // } catch (e) {
-    //   if (!ssn) {
-    //   ssn = req.session;
-    //   res.json({
-    //     status: 400,
-    //     message: "No Page"
-    //   });
-    //   return;
-    //   }
-    // }
-    res.end(JSON.stringify(ssn));
-
-    // ssn = req.session;
-    // if (!ssn.token) {
-    //   res.json({
-    //     status: 400,
-    //     message: "No Page"
-    //   });
-    //   return;
-    // }
-
+    // console.log(req.session, "session");
+    // console.log(Object.keys(req.session), "req.session");
+    if (!Object.keys(req.session).some(value => value === "token" || value === "selt")) {
+      res.json({
+        status: 400,
+        message: "No Page"
+      });
+      return;
+    }
     const bearerHeader = req.headers["authorization"];
     if (typeof bearerHeader !== "undefined") {
       const bearer = bearerHeader.split(" ");

@@ -32,7 +32,7 @@ app.get("/td", function(req, res) {
   console.log(req.cookies, "req.cookies");
   res.end("end");
 });
-var ssn = false;
+var ssn = {};
 getRouter(app);
 var server = app.listen(4000, function() {
   var host = server.address().address;

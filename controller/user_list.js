@@ -5,25 +5,6 @@ var db = require("../connect_db");
 var md5 = require("md5");
 app.use(cors());
 const User = {
-  empty(req, res) {
-    console.log(req.session, "req.session");
-    // res.end("ADDDD" + ssn.token);
-    res.json({
-      session: ssn.token
-    });
-  },
-  ss(req, res) {
-    req.session.token = "XDBBBB";
-    // ssn = req.session;
-    // ssn.mail = "mailGGGG";
-    // res.json({
-    //   a: "test"
-    // });
-    res.end("xGDG");
-  },
-  test(req, res) {
-    res.json({ status: "success" });
-  },
   async get_user(req, res) {
     let list_sql = await db.con_db(` SELECT * FROM user ORDER BY id_user DESC `);
     res.json({ data: list_sql });
