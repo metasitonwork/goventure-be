@@ -8,7 +8,7 @@ const Module = {
   ensureToken(req, res, next) {
     // console.log(req.session, "session");
     // console.log(Object.keys(req.session), "req.session");
-    res.end(Object.keys(req.session).toString);
+    // res.end(Object.keys(req.session).toString);
     if (!Object.keys(req.session).some(value => value === "token" || value === "selt")) {
       res.json({
         status: 400,
