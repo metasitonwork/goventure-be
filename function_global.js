@@ -9,7 +9,9 @@ const Module = {
     // console.log(req.session, "session");
     // console.log(Object.keys(req.session), "req.session");
     // res.end(Object.keys(req.session).toString);
-    if (!Object.keys(req.session).some(value => value === "token" || value === "selt")) {
+
+    ssn = req.session;
+    if (!Object.keys(ssn).some(value => value === "token" || value === "selt")) {
       res.json({
         status: 400,
         message: "No Page"
