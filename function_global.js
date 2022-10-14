@@ -7,13 +7,17 @@ app.use(cors());
 
 const Module = {
   ensureToken(req, res, next) {
+    try {
+    } catch (e) {}
     if (!ssn) {
+      ssn = req.session;
       res.json({
         status: 400,
         message: "No Page"
       });
       return;
     }
+
     const bearerHeader = req.headers["authorization"];
     if (typeof bearerHeader !== "undefined") {
       const bearer = bearerHeader.split(" ");
