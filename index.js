@@ -9,7 +9,6 @@ app.use(
     secret: "secret"
   })
 );
-var ssn = null;
 
 var cors = require("cors");
 const corsConfig = {
@@ -33,7 +32,7 @@ app.get("/td", function(req, res) {
   console.log(req.cookies, "req.cookies");
   res.end("end");
 });
-
+var ssn = false;
 getRouter(app);
 var server = app.listen(4000, function() {
   var host = server.address().address;

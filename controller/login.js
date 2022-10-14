@@ -14,16 +14,6 @@ const login = {
     // console.log("login");
     let { username, password } = req.body;
     ssn = req.session;
-    // ssn.token = "444";
-    // ssn.selt = "111";
-    // res.end("END" + req.session.token);
-    // res.json({
-    //   test: "test",
-    //   session: req.session
-    // });
-
-    // return;
-    // console.log(username, password);
     let data = await db.con_db(`SELECT * FROM user WHERE username = '${username}' AND  password =   '${password}'  `);
     if (data == false) {
       res.status(400).json({
