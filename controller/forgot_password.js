@@ -72,13 +72,8 @@ const forgotPassword = {
             status: 200,
             message: "กรุณาตรวจสอบ Email"
           });
-          // res.end("FALSE");
-          // console.log("Email sent: " + info.response);
         }
       });
-
-      // res.cookie("forgot", random, { maxAge: 10 * 60 * 1000 });
-
       return;
     }
     console.log(data.length, "data.length");
@@ -90,6 +85,8 @@ const forgotPassword = {
     let data = await db.con_db(sqlReset);
     console.log(data, "data");
     if (data) {
+      delete ssn.seltForgot;
+      delete ssn.tokenForgot;
       res.json({
         status: 200,
         message: "change password success"
