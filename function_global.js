@@ -19,14 +19,14 @@ const Module = {
     //   }
     // }
 
-    // ssn = req.session;
-    // if (!ssn.token) {
-    //   res.json({
-    //     status: 400,
-    //     message: "No Page"
-    //   });
-    //   return;
-    // }
+    ssn = req.session;
+    if (!ssn.token) {
+      res.json({
+        status: 400,
+        message: "No Page"
+      });
+      return;
+    }
 
     const bearerHeader = req.headers["authorization"];
     if (typeof bearerHeader !== "undefined") {
