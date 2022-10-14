@@ -18,7 +18,7 @@ const Module = {
     //   return;
     //   }
     // }
-    res.end("AAAA" + JSON.stringify(ssn));
+    res.end(JSON.stringify(ssn));
 
     // ssn = req.session;
     // if (!ssn.token) {
