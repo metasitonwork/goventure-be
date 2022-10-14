@@ -6,10 +6,6 @@ app.use(cors());
 
 const Module = {
   ensureToken(req, res, next) {
-    // console.log(req.session, "session");
-    // console.log(Object.keys(req.session), "req.session");
-    // res.end(Object.keys(req.session).toString);
-
     try {
       if (!Object.keys(ssn).some(value => value === "token" || value === "selt")) {
         res.json({
@@ -33,13 +29,11 @@ const Module = {
       req.token = bearerToken;
       jwt.verify(ssn.token, ssn.selt, function(err, data) {
         if (err) {
-          console.log("FALSE");
           res.json({
             text: "Error",
             data: data
           });
         } else {
-          console.log("True");
           next();
         }
       });

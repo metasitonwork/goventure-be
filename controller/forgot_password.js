@@ -20,7 +20,6 @@ var transporter = nodemailer.createTransport({
 });
 const forgotPassword = {
   async forgot(req, res) {
-    // res.end("TEST");
     ssn = req.session;
     let { email } = req.body;
     let data = await db.con_db(`SELECT * FROM user WHERE email = '${email}'  `);
@@ -47,8 +46,6 @@ const forgotPassword = {
       ssn.seltForgot = random;
       ssn.tokenForgot = token;
       const url = `http://localhost:3000/reset_password?id=${id}&code=${token}`;
-      console.log(url, "url");
-
       var mailOptions = {
         from: "metasitstar@gmail.com",
         to: email,
@@ -60,13 +57,10 @@ const forgotPassword = {
         </div>
         `
       };
-      console.log(mailOptions, "mailOptions");
-      console.log(url, "url");
 
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
           res.end(error.toString());
-          console.log(error, "error");
         } else {
           res.status(200).json({
             status: 200,
@@ -76,14 +70,12 @@ const forgotPassword = {
       });
       return;
     }
-    console.log(data.length, "data.length");
   },
   async reset_password(req, res) {
     let { id, password } = req.body;
     let sqlReset = `  UPDATE user set password = '${password}' WHERE id_user =${id} `;
 
     let data = await db.con_db(sqlReset);
-    console.log(data, "data");
     if (data) {
       delete ssn.seltForgot;
       delete ssn.tokenForgot;
@@ -101,7 +93,6 @@ const forgotPassword = {
 
   async protectedForgot(req, res) {
     const { token, id } = req.body;
-    // res.end(JSON.stringify(ssn).toString());
     jwt.verify(token, ssn.seltForgot, function(err, data) {
       if (err) {
         res.json({
@@ -121,14 +112,10 @@ const forgotPassword = {
   },
 
   exit(req, res) {
-    console.log("exit");
-    console.log(req.cookies, "before");
     res.clearCookie("selt");
-    console.log(req.cookies, "after");
     res.end("");
   },
   async save_member(req, res) {
-    // console.log(req.body,'body');
     res.json({
       data: req.body
     });

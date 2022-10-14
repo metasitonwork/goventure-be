@@ -28,8 +28,6 @@ app.use(bodyParser.json());
 const { getRouter } = require("./router");
 app.get("/td", function(req, res) {
   res.cookie("name", "express");
-  console.log("td");
-  console.log(req.cookies, "req.cookies");
   res.end("end");
 });
 var ssn = {};

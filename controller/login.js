@@ -11,7 +11,6 @@ app.use(cors());
 
 const login = {
   async login(req, res) {
-    // console.log("login");
     let { username, password } = req.body;
     ssn = req.session;
     let data = await db.con_db(`SELECT * FROM user WHERE username = '${username}' AND  password =   '${password}'  `);
@@ -45,24 +44,18 @@ const login = {
     const token = await jwt.sign({ user }, random);
     ssn.token = token;
     ssn.selt = random;
-    // res.cookie("token", token);
-    // res.cookie("selt", random);
-    // console.log(req.cookies.selt, "selt");
     res.json({
       data: data,
       token: token
     });
   },
   exit(req, res) {
-    console.log("exit");
     delete ssn.selt;
-    // res.clearCookie("selt");
     res.end("");
   },
 
   async protected(req, res) {
     const { token } = req.body;
-    console.log(ssn.selt, "SELT");
     jwt.verify(token, ssn.selt, function(err, data) {
       if (err) {
         res.json({
@@ -79,7 +72,6 @@ const login = {
     });
   },
   async save_member(req, res) {
-    // console.log(req.body,'body');
     res.json({
       data: req.body
     });

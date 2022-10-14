@@ -40,7 +40,6 @@ const User = {
       });
     } else {
       res.send("Error");
-      // res.end("Error");
     }
   },
   async update_user(req, res) {
@@ -60,9 +59,6 @@ const User = {
         status: 400,
         message: "Update Error"
       });
-
-      // res.send("Error");
-      // res.end("Error");
     }
   },
   async delete_user(req, res) {
