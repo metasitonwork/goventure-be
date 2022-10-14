@@ -1,6 +1,5 @@
 var express = require("express");
 var app = express();
-var fs = require("fs");
 const session = require("express-session");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -24,12 +23,8 @@ var cookieParser = require("cookie-parser");
 app.use(cookieParser());
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
-
+app.set("config", 100);
 const { getRouter } = require("./router");
-app.get("/td", function(req, res) {
-  res.cookie("name", "express");
-  res.end("end");
-});
 var ssn = {};
 getRouter(app);
 var server = app.listen(4000, function() {

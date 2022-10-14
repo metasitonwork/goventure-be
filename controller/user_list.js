@@ -2,9 +2,19 @@ var express = require("express");
 var app = express();
 var cors = require("cors");
 var db = require("../connect_db");
-var md5 = require("md5");
 app.use(cors());
 const User = {
+  td2(req, res) {
+    req.app.locals.number = "200";
+    console.log(req.app.locals.numberxxx, "222");
+    res.send("END2");
+  },
+  td(req, res) {
+    // console.log(req.app.get("config"));
+    req.app.locals.number = "100";
+    console.log(req.app.locals.number, "req.app.locals.number");
+    res.send("END");
+  },
   async get_user(req, res) {
     let list_sql = await db.con_db(` SELECT * FROM user ORDER BY id_user DESC `);
     res.json({ data: list_sql });

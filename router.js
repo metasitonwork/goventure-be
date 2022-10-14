@@ -4,7 +4,8 @@ const controllerForgot = require("./controller/forgot_password");
 const Module = require("./function_global");
 
 function getRouter(app) {
-  var ssn = null;
+  app.get("/td2", controllerUser.td2);
+  app.get("/td", controllerUser.td);
   app.get("/get_user", Module.ensureToken, controllerUser.get_user);
   app.post("/add_user", controllerUser.add_user);
   app.post("/check_user", controllerUser.check_user);
