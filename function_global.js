@@ -18,6 +18,7 @@ const Module = {
     //   return;
     //   }
     // }
+    res.end("AAAA" + req.session.token);
 
     ssn = req.session;
     if (!ssn.token) {
