@@ -10,14 +10,22 @@ const Module = {
     // console.log(Object.keys(req.session), "req.session");
     // res.end(Object.keys(req.session).toString);
 
-    ssn = req.session;
-    if (!Object.keys(ssn).some(value => value === "token" || value === "selt")) {
+    try {
+      if (!Object.keys(ssn).some(value => value === "token" || value === "selt")) {
+        res.json({
+          status: 400,
+          message: "No Page"
+        });
+        return;
+      }
+    } catch (e) {
       res.json({
         status: 400,
         message: "No Page"
       });
       return;
     }
+
     const bearerHeader = req.headers["authorization"];
     if (typeof bearerHeader !== "undefined") {
       const bearer = bearerHeader.split(" ");
